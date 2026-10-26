@@ -1,0 +1,929 @@
+
+/* ==================================================
+   SMARTFOODFINDER — HOMEPAGE STYLES
+   Design: Modern, Clean, Food-Focused
+   Shared styles remain in /shared/common.css
+   ================================================== */
+
+/* 1. HOMEPAGE BASE */
+
+.home-page {
+    background: var(--color-background);
+    color: var(--color-text);
+    overflow-x: clip;
+}
+
+.home-page main {
+    width: 100%;
+}
+
+.home-page .section-eyebrow {
+    margin-bottom: 18px;
+    color: #688168;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    line-height: 1.7;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3 {
+    overflow-wrap: break-word;
+}
+
+.home-page a {
+    text-decoration: none;
+}
+
+/* ==================================================
+   2. HERO SECTION
+   ================================================== */
+
+.home-hero {
+    position: relative;
+    padding: 72px 0 82px;
+    background:
+        radial-gradient(
+            ellipse at 83% 38%,
+            rgba(226, 233, 217, 0.65),
+            transparent 43%
+        ),
+        var(--color-background);
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero-content .section-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-content .section-eyebrow::before {
+    width: 24px;
+    height: 2px;
+    flex-shrink: 0;
+    background: #789374;
+    content: "";
+}
+
+.hero-content h1 {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(42px, 4.5vw, 62px);
+    font-weight: 600;
+    letter-spacing: -1.7px;
+    line-height: 1.16;
+}
+
+.hero-content h1 span {
+    color: #718e6b;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 470px;
+    margin: 23px 0 27px;
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+/* Recipe search */
+
+.hero-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    min-height: 60px;
+    padding: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 9px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.hero-search:focus-within {
+    border-color: var(--color-focus);
+    box-shadow: 0 0 0 3px rgba(114, 155, 119, 0.12);
+}
+
+.search-icon {
+    display: grid;
+    width: 32px;
+    height: 38px;
+    flex-shrink: 0;
+    place-items: center;
+    color: #768574;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.hero-search input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: 44px;
+    padding: 0 3px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 11px;
+}
+
+.hero-search input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.hero-search input:focus-visible {
+    outline: none;
+}
+
+.search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 18px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-primary);
+    border-radius: 6px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.search-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.search-button span {
+    font-size: 15px;
+}
+
+/* Popular search links */
+
+.popular-searches {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin: 15px 0 23px;
+    color: var(--color-text-secondary);
+    font-size: 10px;
+}
+
+.popular-searches > span {
+    font-weight: 700;
+}
+
+.popular-searches a {
+    color: #607960;
+    transition: color var(--transition-fast);
+}
+
+.popular-searches a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Hero buttons */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-actions .btn {
+    font-size: 11px;
+}
+
+.hero-actions .btn-primary {
+    min-height: 46px;
+    padding-inline: 19px;
+}
+
+.hero-actions .btn-secondary {
+    min-height: 46px;
+    padding-inline: 19px;
+}
+
+/* Short supporting message */
+
+.hero-trust-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 27px;
+    color: #748073;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.trust-check {
+    display: grid;
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 50%;
+    background: #e5ede0;
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* ==================================================
+   3. HERO FOOD IMAGE
+   ================================================== */
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+    padding: 0 0 27px 16px;
+}
+
+.hero-image-frame {
+    height: 435px;
+    overflow: hidden;
+    border-radius: 12px 115px 12px 12px;
+    background: #e4e9dd;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-food-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 500ms ease;
+}
+
+.hero-image-frame:hover .hero-food-image {
+    transform: scale(1.035);
+}
+
+/* Floating caption */
+
+.hero-image-note {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 285px;
+    max-width: calc(100% - 20px);
+    padding: 17px 19px;
+    border: 1px solid var(--color-border);
+    border-radius: 9px;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-md);
+}
+
+.image-note-icon {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 21px;
+}
+
+.hero-image-note strong {
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.hero-image-note p {
+    margin: 4px 0 0;
+    color: var(--color-text-secondary);
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+/* ==================================================
+   4. QUICK ACCESS CARDS
+   ================================================== */
+
+.quick-access-section {
+    padding: 0 0 76px;
+    background: var(--color-background);
+}
+
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+}
+
+.quick-access-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    padding: 23px 21px;
+    color: var(--color-text);
+    transition: background var(--transition-normal);
+}
+
+.quick-access-card + .quick-access-card {
+    border-left: 1px solid var(--color-border);
+}
+
+.quick-access-card:hover {
+    background: var(--color-surface-hover);
+}
+
+.quick-access-icon {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 23px;
+}
+
+.quick-access-copy {
+    display: block;
+    min-width: 0;
+}
+
+.quick-access-copy strong {
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.quick-access-copy small {
+    display: block;
+    margin-top: 5px;
+    color: var(--color-text-secondary);
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+.quick-access-arrow {
+    margin-left: auto;
+    padding-left: 3px;
+    color: #718b6f;
+    font-size: 15px;
+    opacity: 0;
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.quick-access-card:hover .quick-access-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* ==================================================
+   5. INTRODUCTION SECTION
+   ================================================== */
+
+.home-introduction {
+    padding: 83px 0;
+    border-top: 1px solid #e9e9e0;
+    background: var(--color-surface-muted);
+}
+
+.introduction-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+    align-items: end;
+    gap: 65px;
+}
+
+.introduction-heading h2 {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(35px, 4vw, 48px);
+    font-weight: 600;
+    letter-spacing: -0.9px;
+    line-height: 1.22;
+}
+
+.introduction-description {
+    max-width: 450px;
+    margin: 0;
+    color: #6f796c;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* ==================================================
+   6. FEATURED TOOLS SECTION
+   ================================================== */
+
+.home-features {
+    padding: 82px 0 95px;
+    background: var(--color-background);
+}
+
+.features-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 36px;
+}
+
+.features-heading h2 {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.5vw, 42px);
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    line-height: 1.3;
+}
+
+.features-description {
+    max-width: 285px;
+    margin: 0 0 5px;
+    color: var(--color-text-secondary);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-image {
+    height: 190px;
+    margin: 10px 10px 0;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--color-primary-light);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 450ms ease;
+}
+
+.feature-card:hover .feature-image img {
+    transform: scale(1.04);
+}
+
+.feature-card-content {
+    padding: 19px 21px 24px;
+}
+
+.feature-label {
+    color: #71896c;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.feature-card h3 {
+    margin: 12px 0 9px;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.feature-card p {
+    min-height: 42px;
+    margin: 0 0 17px;
+    color: var(--color-text-secondary);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.feature-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.feature-card:hover .feature-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ==================================================
+   7. CLOSING SECTION
+   ================================================== */
+
+.home-closing {
+    padding: 49px 0;
+    border-top: 1px solid #dce4d8;
+    background: #e8eee4;
+}
+
+.closing-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.closing-layout h2 {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(29px, 3.5vw, 39px);
+    font-weight: 600;
+    letter-spacing: -0.7px;
+    line-height: 1.3;
+}
+
+.closing-layout > div > p:last-child {
+    margin: 10px 0 0;
+    color: #718071;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* ==================================================
+   8. RESPONSIVE TABLET LAYOUT
+   ================================================== */
+
+@media (max-width: 1050px) {
+    .home-hero {
+        padding-top: 58px;
+    }
+
+    .hero-layout {
+        gap: 38px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(39px, 4.8vw, 53px);
+    }
+
+    .hero-image-frame {
+        height: 375px;
+        border-top-right-radius: 90px;
+    }
+
+    .quick-access-card {
+        gap: 10px;
+        padding-inline: 14px;
+    }
+
+    .quick-access-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .feature-grid {
+        gap: 15px;
+    }
+
+    .feature-image {
+        height: 155px;
+    }
+
+    .feature-card-content {
+        padding-inline: 15px;
+    }
+
+    .introduction-layout {
+        gap: 38px;
+    }
+}
+
+/* ==================================================
+   9. RESPONSIVE TABLET AND MOBILE LAYOUT
+   ================================================== */
+
+@media (max-width: 850px) {
+    .home-hero {
+        padding-top: 46px;
+        padding-bottom: 58px;
+    }
+
+    .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 39px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(43px, 7vw, 59px);
+    }
+
+    .hero-description {
+        max-width: 560px;
+    }
+
+    .hero-search {
+        max-width: 560px;
+    }
+
+    .hero-visual {
+        width: min(100%, 620px);
+        margin-inline: auto;
+        padding-left: 0;
+    }
+
+    .hero-image-frame {
+        height: 390px;
+        border-top-right-radius: 100px;
+    }
+
+    .quick-access-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .quick-access-card + .quick-access-card {
+        border-top: 1px solid var(--color-border);
+        border-left: 0;
+    }
+
+    .quick-access-card {
+        padding: 18px;
+    }
+
+    .quick-access-arrow {
+        opacity: 1;
+    }
+
+    .introduction-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .introduction-description {
+        max-width: 580px;
+    }
+
+    .features-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .features-description {
+        max-width: 500px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .feature-card:last-child .feature-image {
+        height: 220px;
+    }
+
+    .closing-layout {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* ==================================================
+   10. RESPONSIVE SMALL MOBILE
+   ================================================== */
+
+@media (max-width: 540px) {
+    .home-hero {
+        padding-top: 37px;
+        padding-bottom: 47px;
+    }
+
+    .home-page .section-eyebrow {
+        margin-bottom: 14px;
+        font-size: 9px;
+        letter-spacing: 1.3px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(36px, 9.5vw, 48px);
+        letter-spacing: -1.1px;
+        line-height: 1.18;
+    }
+
+    .hero-description {
+        margin: 18px 0 21px;
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .hero-search {
+        gap: 4px;
+        min-height: 54px;
+        padding: 5px;
+    }
+
+    .search-icon {
+        width: 26px;
+        font-size: 23px;
+    }
+
+    .hero-search input {
+        font-size: 10px;
+    }
+
+    .search-button {
+        gap: 5px;
+        min-height: 42px;
+        padding-inline: 11px;
+        font-size: 10px;
+    }
+
+    .popular-searches {
+        gap: 10px;
+        margin-block: 13px 20px;
+    }
+
+    .hero-actions {
+        gap: 9px;
+    }
+
+    .hero-actions .btn {
+        min-height: 43px;
+        padding-inline: 12px;
+        font-size: 10px;
+    }
+
+    .hero-trust-note {
+        align-items: flex-start;
+        margin-top: 21px;
+        font-size: 9px;
+    }
+
+    .hero-image-frame {
+        height: 290px;
+        border-top-right-radius: 75px;
+    }
+
+    .hero-image-note {
+        gap: 9px;
+        min-width: 0;
+        max-width: calc(100% - 12px);
+        padding: 12px;
+    }
+
+    .image-note-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 18px;
+    }
+
+    .hero-image-note strong {
+        font-size: 10px;
+    }
+
+    .hero-image-note p {
+        font-size: 8px;
+    }
+
+    .quick-access-section {
+        padding-bottom: 49px;
+    }
+
+    .quick-access-card {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .quick-access-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .home-introduction {
+        padding: 58px 0;
+    }
+
+    .introduction-heading h2 {
+        font-size: 36px;
+    }
+
+    .introduction-description {
+        font-size: 11px;
+    }
+
+    .home-features {
+        padding: 60px 0 66px;
+    }
+
+    .features-heading h2 {
+        font-size: 31px;
+    }
+
+    .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .feature-card:last-child {
+        grid-column: auto;
+    }
+
+    .feature-image,
+    .feature-card:last-child .feature-image {
+        height: 200px;
+    }
+
+    .feature-card p {
+        min-height: 0;
+    }
+
+    .feature-card-content {
+        padding: 18px 19px 22px;
+    }
+
+    .home-closing {
+        padding: 39px 0;
+    }
+
+    .closing-layout h2 {
+        font-size: 30px;
+    }
+}
+
+/* ==================================================
+   11. REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

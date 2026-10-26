@@ -1,0 +1,18 @@
+# Maven build output
+target/
+
+# IDE settings
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local configuration
+application-local.properties
+application-local.yml

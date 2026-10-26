@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f7f2">
+    <meta name="description"
+          content="Discover delicious recipes with SmartFoodFinder. Search recipes and find meals using ingredients from your kitchen.">
+
+    <title>Discover Recipes | SmartFoodFinder</title>
+
+    <!-- Shared website typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Shared design system -->
+    <link rel="stylesheet" href="/shared/common.css">
+
+    <!-- Recipe page styles -->
+    <link rel="stylesheet" href="/recipe/recipe.css">
+</head>
+
+<body class="recipe-page">
+
+    <!-- Shared header -->
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- =================================
+             RECIPE PAGE INTRODUCTION
+             ================================= -->
+
+        <section class="recipe-hero">
+            <div class="container recipe-hero-inner">
+
+                <p class="section-eyebrow">
+                    YOUR NEXT MEAL STARTS HERE
+                </p>
+
+                <h1>
+                    Discover something<br>
+                    <span>delicious.</span>
+                </h1>
+
+                <p class="recipe-hero-description">
+                    From everyday favourites to new ideas,
+                    find recipes to inspire your next meal.
+                </p>
+
+                <!-- Recipe search -->
+                <form class="recipe-search-form" id="recipe-search-form">
+
+                    <label class="visually-hidden"
+                           for="recipe-search-input">
+                        Search recipes by name
+                    </label>
+
+                    <span class="recipe-search-icon" aria-hidden="true">
+                        &#9906;
+                    </span>
+
+                    <input
+                        type="search"
+                        id="recipe-search-input"
+                        name="name"
+                        placeholder="Search recipes, e.g. paneer..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit"
+                            class="btn btn-primary recipe-search-button">
+                        Search
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+
+                </form>
+
+                <button type="button"
+                        class="recipe-clear-search"
+                        id="clear-recipe-search"
+                        hidden>
+                    Clear search
+                </button>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             RECIPE COLLECTION
+             Kitchen suggestions first,
+             Explore Recipes second
+             ================================= -->
+
+        <section class="recipe-collection">
+            <div class="container">
+
+                <!-- =================================
+                     RECIPES FROM YOUR KITCHEN
+                     ================================= -->
+
+                <section id="kitchen-suggestions"
+                         class="kitchen-suggestions"
+                         aria-labelledby="kitchen-suggestions-title"
+                         hidden>
+
+                    <p class="section-eyebrow">
+                        COOK WITH WHAT YOU HAVE
+                    </p>
+
+                    <h2 id="kitchen-suggestions-title">
+                        Recipes from Your Kitchen
+                    </h2>
+
+                    <p id="kitchen-suggestions-message"
+                       aria-live="polite">
+                        Finding recipes that match your ingredients...
+                    </p>
+
+                    <!-- Kitchen-matched recipes -->
+                    <div id="kitchen-suggestions-grid"
+                         class="recipe-grid"
+                         aria-label="Recipes matched with your kitchen ingredients">
+                    </div>
+
+                    <!-- Show more kitchen suggestions -->
+                    <button type="button"
+                            id="show-more-kitchen-recipes"
+                            class="btn btn-secondary"
+                            hidden>
+                        Show More Recipes
+                    </button>
+
+                </section>
+
+                <!-- =================================
+                     EXPLORE ALL RECIPES
+                     Heading and count are below
+                     kitchen suggestions
+                     ================================= -->
+
+                <div class="recipe-results-heading">
+
+                    <div>
+                        <p class="section-eyebrow">
+                            MADE FOR EVERYDAY COOKING
+                        </p>
+
+                        <h2 id="recipe-section-title">
+                            Explore recipes
+                        </h2>
+
+                        <p class="recipe-results-description"
+                           id="recipe-results-description">
+                            Find inspiration for your next meal.
+                        </p>
+                    </div>
+
+                    <!-- Count for Explore Recipes only -->
+                    <div class="recipe-results-count"
+                         id="recipe-results-count"
+                         aria-live="polite">
+                        Loading recipes...
+                    </div>
+
+                </div>
+
+                <!-- Loading, errors and result messages -->
+                <div class="recipe-status"
+                     id="recipe-status"
+                     role="status"
+                     aria-live="polite">
+                    Loading recipes. Please wait...
+                </div>
+
+                <!-- =================================
+                     ALL RECIPE RESULTS
+                     ================================= -->
+
+                <div class="recipe-grid"
+                     id="recipe-grid"
+                     aria-busy="true"
+                     aria-label="Explore recipe results">
+                </div>
+
+                <!-- Empty result message -->
+                <div class="recipe-empty-state"
+                     id="recipe-empty-state"
+                     hidden>
+
+                    <span class="empty-state-icon"
+                          aria-hidden="true">&#9825;</span>
+
+                    <h3>No recipes found</h3>
+
+                    <p>
+                        Try another recipe name or clear your search
+                        to explore the full collection.
+                    </p>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            id="show-all-recipes">
+                        Show all recipes
+                    </button>
+
+                </div>
+
+                <!-- Pagination controls for Explore Recipes -->
+                <nav class="recipe-pagination"
+                     id="recipe-pagination"
+                     aria-label="Recipe result pages"
+                     hidden>
+
+                    <button type="button"
+                            class="pagination-button"
+                            id="previous-page"
+                            disabled>
+                        &larr; Previous
+                    </button>
+
+                    <div class="pagination-pages"
+                         id="pagination-pages"
+                         aria-label="Page numbers">
+                    </div>
+
+                    <button type="button"
+                            class="pagination-button"
+                            id="next-page"
+                            disabled>
+                        Next &rarr;
+                    </button>
+
+                </nav>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             COOKING INSPIRATION
+             ================================= -->
+
+        <section class="recipe-inspiration">
+            <div class="container recipe-inspiration-inner">
+
+                <div>
+                    <p class="section-eyebrow">
+                        A LITTLE COOKING INSPIRATION
+                    </p>
+
+                    <h2>Make something wonderful today.</h2>
+
+                    <p>
+                        Great meals don't need to be complicated.
+                        Start with an idea and discover what you can create.
+                    </p>
+                </div>
+
+                <a href="/kitchen/my-kitchen.html"
+                   class="btn btn-primary">
+                    Visit My Kitchen
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =================================
+         RECIPE DETAILS POPUP
+         ================================= -->
+
+    <div id="recipe-details-modal"
+         class="recipe-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="recipe-modal-title"
+         hidden>
+
+        <div class="recipe-modal-backdrop"
+             id="recipe-modal-backdrop">
+        </div>
+
+        <div class="recipe-modal-content">
+
+            <button type="button"
+                    id="recipe-modal-close"
+                    class="recipe-modal-close"
+                    aria-label="Close recipe details">
+                &times;
+            </button>
+
+            <p class="section-eyebrow">
+                YOUR NEXT MEAL
+            </p>
+
+            <h2 id="recipe-modal-title">
+                Recipe Details
+            </h2>
+
+            <p id="recipe-modal-time"
+               class="recipe-modal-time">
+            </p>
+
+            <section>
+                <h3>Ingredients</h3>
+                <div id="recipe-modal-ingredients"></div>
+            </section>
+
+            <section>
+                <h3>Cooking Instructions</h3>
+                <div id="recipe-modal-instructions"></div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Shared footer -->
+    <div id="site-footer"></div>
+
+    <!-- Shared and page-specific behaviour -->
+    <script src="/shared/common.js" defer></script>
+    <script src="/recipe/recipe.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | SmartFoodFinder</title>
+    <link rel="stylesheet" href="/account/register.css">
+    <script src="/account/register.js" defer></script>
+</head>
+<body>
+    <main class="auth-container">
+        <section class="auth-card">
+            <a href="/" class="brand">🥗 SmartFoodFinder</a>
+
+            <h1>Create your account</h1>
+            <p class="subtitle">
+                Organise your kitchen, plan groceries and discover recipes.
+            </p>
+
+            <div id="form-message" class="form-message"
+                 role="status" aria-live="polite" hidden></div>
+
+            <form id="register-form">
+                <label for="fullName">Full name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Email address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    maxlength="255"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <div class="password-field">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="At least 8 characters"
+                        minlength="8"
+                        maxlength="72"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <button type="button" class="toggle-password"
+                            data-target="password">Show</button>
+                </div>
+
+                <label for="confirmPassword">Confirm password</label>
+                <div class="password-field">
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Enter password again"
+                        minlength="8"
+                        maxlength="72"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <button type="button" class="toggle-password"
+                            data-target="confirmPassword">Show</button>
+                </div>
+
+                <button type="submit" id="register-button"
+                        class="primary-button">
+                    Create Account
+                </button>
+            </form>
+
+            <div class="separator"><span>OR</span></div>
+
+            <a href="/oauth2/authorization/google"
+               class="google-button">
+                <span class="google-icon">G</span>
+                Continue with Google
+            </a>
+
+            <p class="switch-page">
+                Already have an account?
+                <a href="/account/login.html">Log in</a>
+            </p>
+
+            <a href="/" class="back-link">← Back to home</a>
+        </section>
+    </main>
+</body>
+</html>

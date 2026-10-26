@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f8f7f2">
+    <meta name="description"
+          content="Discover delicious recipes, organise your kitchen ingredients, and plan smarter shopping with SmartFoodFinder.">
+
+    <title>SmartFoodFinder | Smarter Everyday Cooking</title>
+
+    <!-- Website typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Shared styles used by all pages -->
+    <link rel="stylesheet" href="/shared/common.css">
+
+    <!-- Homepage-only styles -->
+    <link rel="stylesheet" href="/index/index.css">
+</head>
+
+<body class="home-page">
+
+    <!-- Shared header -->
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- =================================
+             HERO SECTION
+             ================================= -->
+
+        <section class="home-hero">
+            <div class="container hero-layout">
+
+                <div class="hero-content">
+
+                    <p class="section-eyebrow">
+                        A BETTER WAY TO COOK
+                    </p>
+
+                    <h1>
+                        Good food starts<br>
+                        with <span>what you have.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Discover delicious recipes, organise your
+                        kitchen ingredients, and make everyday
+                        cooking simpler.
+                    </p>
+
+                    <!-- Recipe search -->
+                    <form class="hero-search" id="home-search">
+
+                        <label class="visually-hidden"
+                               for="ingredient-search">
+                            Search recipes
+                        </label>
+
+                        <span class="search-icon" aria-hidden="true">
+                            &#9906;
+                        </span>
+
+                        <input
+                            type="search"
+                            id="ingredient-search"
+                            name="name"
+                            placeholder="Search recipes, e.g. paneer..."
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button type="submit" class="search-button">
+                            Search
+                            <span aria-hidden="true">&rarr;</span>
+                        </button>
+
+                    </form>
+
+                    <p class="popular-searches">
+                        <span>Try:</span>
+                        <a href="/recipe/recipe.html?name=paneer">Paneer</a>
+                        <a href="/recipe/recipe.html?name=rice">Rice</a>
+                        <a href="/recipe/recipe.html?name=potato">Potato</a>
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="/recipe/recipe.html"
+                           class="btn btn-primary">
+                            Explore Recipes
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+
+                        <a href="/kitchen/my-kitchen.html"
+                           class="btn btn-secondary">
+                            My Kitchen
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust-note">
+                        <span class="trust-check" aria-hidden="true">
+                            &#10003;
+                        </span>
+
+                        Make the most of the ingredients you have.
+                    </div>
+
+                </div>
+
+                <!-- Main food photograph -->
+                <div class="hero-visual">
+
+                    <div class="hero-image-frame">
+                        <img
+                            class="hero-food-image"
+                            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85"
+                            alt="A colourful bowl of fresh vegetables and healthy food"
+                            fetchpriority="high"
+                        >
+                    </div>
+
+                    <!-- Image caption -->
+                    <div class="hero-image-note">
+                        <span class="image-note-icon"
+                              aria-hidden="true">
+                            &#10022;
+                        </span>
+
+                        <div>
+                            <strong>Fresh ideas, every day</strong>
+                            <p>Simple ingredients. Delicious possibilities.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             QUICK ACCESS
+             ================================= -->
+
+        <section class="quick-access-section"
+                 aria-label="Explore SmartFoodFinder">
+
+            <div class="container quick-access-grid">
+
+                <a href="/recipe/recipe.html"
+                   class="quick-access-card">
+
+                    <span class="quick-access-icon" aria-hidden="true">
+                        &#10022;
+                    </span>
+
+                    <span class="quick-access-copy">
+                        <strong>Discover Recipes</strong>
+                        <small>Find your next favourite meal.</small>
+                    </span>
+
+                    <span class="quick-access-arrow"
+                          aria-hidden="true">&nearr;</span>
+                </a>
+
+                <a href="/kitchen/my-kitchen.html"
+                   class="quick-access-card">
+
+                    <span class="quick-access-icon" aria-hidden="true">
+                        &#9825;
+                    </span>
+
+                    <span class="quick-access-copy">
+                        <strong>My Kitchen</strong>
+                        <small>Manage your ingredients.</small>
+                    </span>
+
+                    <span class="quick-access-arrow"
+                          aria-hidden="true">&nearr;</span>
+                </a>
+
+                <a href="/shopping/shopping-list.html"
+                   class="quick-access-card">
+
+                    <span class="quick-access-icon" aria-hidden="true">
+                        &#9776;
+                    </span>
+
+                    <span class="quick-access-copy">
+                        <strong>Shopping List</strong>
+                        <small>Plan your grocery shopping.</small>
+                    </span>
+
+                    <span class="quick-access-arrow"
+                          aria-hidden="true">&nearr;</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             INTRODUCTION
+             ================================= -->
+
+        <section class="home-introduction">
+            <div class="container introduction-layout">
+
+                <div class="introduction-heading">
+                    <p class="section-eyebrow">
+                        LESS WASTE. MORE FLAVOUR.
+                    </p>
+
+                    <h2>
+                        Make every<br>
+                        ingredient count.
+                    </h2>
+                </div>
+
+                <p class="introduction-description">
+                    Your kitchen already holds the beginnings of
+                    a great meal. Find inspiration for your ingredients,
+                    keep your kitchen organised, and plan what you need
+                    with ease.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- =================================
+             MAIN FEATURES
+             ================================= -->
+
+        <section class="home-features">
+            <div class="container">
+
+                <div class="features-heading">
+
+                    <div>
+                        <p class="section-eyebrow">
+                            MADE FOR YOUR KITCHEN
+                        </p>
+
+                        <h2>Everyday cooking, made simpler.</h2>
+                    </div>
+
+                    <p class="features-description">
+                        Discover, organise, and plan—all in one place.
+                    </p>
+
+                </div>
+
+                <div class="feature-grid">
+
+                    <!-- Recipe finder -->
+                    <a href="/recipe/recipe.html"
+                       class="feature-card">
+
+                        <div class="feature-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+                                alt="A freshly prepared colourful meal"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="feature-card-content">
+
+                            <span class="feature-label">
+                                01 / DISCOVER
+                            </span>
+
+                            <h3>Find your next favourite.</h3>
+
+                            <p>
+                                Explore recipes and discover
+                                something delicious to cook.
+                            </p>
+
+                            <span class="feature-link">
+                                Explore Recipes &rarr;
+                            </span>
+
+                        </div>
+                    </a>
+
+                    <!-- Kitchen management -->
+                    <a href="/kitchen/my-kitchen.html"
+                       class="feature-card">
+
+                        <div class="feature-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
+                                alt="Fresh green vegetables and ingredients"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="feature-card-content">
+
+                            <span class="feature-label">
+                                02 / ORGANISE
+                            </span>
+
+                            <h3>Know what's in your kitchen.</h3>
+
+                            <p>
+                                Track ingredients and keep
+                                your kitchen inventory organised.
+                            </p>
+
+                            <span class="feature-link">
+                                Open My Kitchen &rarr;
+                            </span>
+
+                        </div>
+                    </a>
+
+                    <!-- Shopping list -->
+                    <a href="/shopping/shopping-list.html"
+                       class="feature-card">
+
+                        <div class="feature-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
+                                alt="Fresh produce ready for grocery shopping"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="feature-card-content">
+
+                            <span class="feature-label">
+                                03 / PLAN
+                            </span>
+
+                            <h3>Shop with a plan.</h3>
+
+                            <p>
+                                Organise grocery essentials
+                                and plan your shopping trips.
+                            </p>
+
+                            <span class="feature-link">
+                                View Shopping List &rarr;
+                            </span>
+
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================
+             CLOSING SECTION
+             ================================= -->
+
+        <section class="home-closing">
+            <div class="container closing-layout">
+
+                <div>
+                    <p class="section-eyebrow">
+                        YOUR KITCHEN, REIMAGINED
+                    </p>
+
+                    <h2>Great meals begin at home.</h2>
+
+                    <p>
+                        Start with your ingredients.
+                        Discover the possibilities.
+                    </p>
+                </div>
+
+                <a href="/recipe/recipe.html"
+                   class="btn btn-primary">
+                    Find a Recipe
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer"></div>
+
+    <!-- Shared and homepage behaviour -->
+    <script src="/shared/common.js" defer></script>
+    <script src="/index/index.js" defer></script>
+
+</body>
+</html>

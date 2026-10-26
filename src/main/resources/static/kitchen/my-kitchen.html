@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f7f1">
+
+    <title>My Kitchen | SmartFoodFinder</title>
+    <meta name="description"
+          content="Manage your kitchen ingredients and quantities with SmartFoodFinder.">
+
+    <link rel="stylesheet" href="/shared/common.css">
+    <link rel="stylesheet" href="/kitchen/my-kitchen.css">
+
+    <script src="/shared/common.js" defer></script>
+    <script src="/kitchen/my-kitchen.js" defer></script>
+</head>
+
+<body>
+    <!-- Shared header -->
+    <div id="site-header"></div>
+
+    <main class="kitchen-page">
+
+        <!-- Page introduction -->
+        <section class="kitchen-hero">
+            <div class="container kitchen-hero-inner">
+                <div class="kitchen-hero-content">
+                    <span class="section-eyebrow">
+                        YOUR PERSONAL PANTRY
+                    </span>
+
+                    <h1>Your kitchen,<br>
+                        <span>beautifully organised.</span>
+                    </h1>
+
+                    <p>
+                        Keep track of what you have, manage quantities,
+                        and make your next meal easier to plan.
+                    </p>
+
+                    <a href="#ingredient-manager"
+                       class="btn btn-primary">
+                        + Add an ingredient
+                    </a>
+                </div>
+
+                <div class="kitchen-hero-visual"
+                     aria-hidden="true">
+                    <div class="kitchen-hero-decoration decoration-one"></div>
+                    <div class="kitchen-hero-decoration decoration-two"></div>
+
+                    <div class="kitchen-hero-emoji">🥑</div>
+
+                    <div class="kitchen-hero-note">
+                        <span>✦</span>
+                        A little more organised,
+                        a little less wasted.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventory summary -->
+        <section class="kitchen-overview container"
+                 aria-label="Kitchen overview">
+
+            <div class="kitchen-section-heading">
+                <div>
+                    <span class="section-eyebrow">AT A GLANCE</span>
+                    <h2>Your kitchen overview</h2>
+                </div>
+
+                <span class="kitchen-live-label">
+                    <span></span> Inventory
+                </span>
+            </div>
+
+            <div class="kitchen-stats-grid">
+                <article class="kitchen-stat-card">
+                    <span class="kitchen-stat-icon">🥬</span>
+                    <p>Total ingredients</p>
+                    <strong id="total-ingredients">—</strong>
+                    <span class="kitchen-stat-caption">
+                        Items in your kitchen
+                    </span>
+                </article>
+
+                <article class="kitchen-stat-card">
+                    <span class="kitchen-stat-icon">⚖️</span>
+                    <p>Total quantity</p>
+                    <strong id="total-quantity">—</strong>
+                    <span class="kitchen-stat-caption">
+                        Combined quantities
+                    </span>
+                </article>
+
+                <article class="kitchen-stat-card">
+                    <span class="kitchen-stat-icon">✨</span>
+                    <p>Ready to manage</p>
+                    <strong id="inventory-status">—</strong>
+                    <span class="kitchen-stat-caption">
+                        Inventory status
+                    </span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ingredient manager -->
+        <section class="ingredient-manager container"
+                 id="ingredient-manager">
+
+            <div class="kitchen-section-heading">
+                <div>
+                    <span class="section-eyebrow">PANTRY MANAGEMENT</span>
+                    <h2>Your ingredients</h2>
+                    <p class="kitchen-section-description">
+                        Everything you have, all in one place.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add ingredient form -->
+            <div class="ingredient-form-card">
+                <div class="ingredient-form-heading">
+                    <div class="ingredient-form-icon">＋</div>
+                    <div>
+                        <h3>Add an ingredient</h3>
+                        <p>Enter the ingredient and the quantity you have.</p>
+                    </div>
+                </div>
+
+                <form id="ingredient-form">
+                    <div class="ingredient-form-grid">
+
+                        <div class="form-field">
+                            <label for="ingredient-name">
+                                Ingredient name
+                            </label>
+                            <input
+                                type="text"
+                                id="ingredient-name"
+                                name="name"
+                                placeholder="e.g. Rice, Paneer, Tomato"
+                                maxlength="100"
+                                required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="ingredient-quantity">
+                                Quantity
+                            </label>
+                            <input
+                                type="number"
+                                id="ingredient-quantity"
+                                name="quantity"
+                                placeholder="e.g. 2"
+                                min="0.01"
+                                step="any"
+                                required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="ingredient-unit">
+                                Unit
+                            </label>
+                            <select id="ingredient-unit"
+                                    name="unit"
+                                    required>
+                                <option value="kg">Kilograms (kg)</option>
+                                <option value="g">Grams (g)</option>
+                                <option value="litre">Litres (L)</option>
+                                <option value="ml">Millilitres (ml)</option>
+                                <option value="piece">Pieces</option>
+                                <option value="pack">Packs</option>
+                            </select>
+                        </div>
+
+                        <div class="ingredient-submit-field">
+                            <button type="submit"
+                                    class="btn btn-primary"
+                                    id="add-ingredient-button">
+                                Add to kitchen <span>↗</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <p id="ingredient-form-message"
+                   class="kitchen-message"
+                   role="status"
+                   aria-live="polite"></p>
+            </div>
+
+            <!-- Search and filter -->
+            <div class="ingredient-toolbar">
+                <div class="ingredient-search">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="ingredient-search"
+                        placeholder="Search your ingredients..."
+                        aria-label="Search ingredients">
+                </div>
+
+                <label class="ingredient-sort-label"
+                       for="ingredient-sort">
+                    Sort:
+                    <select id="ingredient-sort">
+                        <option value="name">Name (A–Z)</option>
+                        <option value="quantity-high">
+                            Quantity: high to low
+                        </option>
+                        <option value="quantity-low">
+                            Quantity: low to high
+                        </option>
+                        <option value="low-stock">
+                            Low Stock Only
+                        </option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- Inventory status -->
+            <div id="kitchen-page-message"
+                 class="kitchen-page-message"
+                 role="status"
+                 aria-live="polite">
+                Loading your kitchen inventory...
+            </div>
+
+            <!-- Ingredients will be inserted here by JavaScript -->
+            <div id="ingredient-list"
+                 class="ingredient-list"
+                 aria-live="polite"
+                 aria-busy="true">
+            </div>
+
+            <!-- Empty inventory state -->
+            <div id="empty-kitchen"
+                 class="empty-kitchen"
+                 hidden>
+                <div class="empty-kitchen-icon">🧺</div>
+                <h3>Your kitchen is waiting</h3>
+                <p>
+                    Add your first ingredient above to start
+                    organising your kitchen.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Recipe discovery -->
+        <section class="kitchen-recipe-cta">
+            <div class="container kitchen-recipe-cta-inner">
+                <div>
+                    <span class="section-eyebrow">
+                        SOMETHING DELICIOUS AWAITS
+                    </span>
+                    <h2>What can you cook today?</h2>
+                    <p>
+                        Explore recipes and find inspiration for your
+                        next homemade meal.
+                    </p>
+                </div>
+
+                <a href="/recipe/recipe.html"
+                   class="btn btn-primary">
+                    Explore recipes <span>↗</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared footer -->
+    <div id="site-footer"></div>
+</body>
+</html>

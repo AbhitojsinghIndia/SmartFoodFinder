@@ -1,0 +1,149 @@
+
+<header class="site-header">
+    <div class="container navbar">
+
+        <!-- SmartFoodFinder logo -->
+        <a href="/index/index.html"
+           class="brand"
+           aria-label="SmartFoodFinder home">
+
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <rect x="1" y="1" width="46" height="46"
+                          rx="14" fill="currentColor"/>
+
+                    <path d="M24 36V22"
+                          stroke="#FFFFFF"
+                          stroke-width="2.4"
+                          stroke-linecap="round"/>
+
+                    <path d="M24 25C12 25 10 16 10 12C20 12 26 16 24 25Z"
+                          fill="#FFFFFF"/>
+
+                    <path d="M24 20C24 10 32 8 38 9C38 18 32 23 24 24"
+                          fill="#BFD7AD"/>
+
+                    <path d="M16 29L24 35L32 29"
+                          stroke="#FFFFFF"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </span>
+
+            <span class="brand-text">
+                <span class="brand-name">
+                    Smart<span class="brand-food">Food</span><span class="brand-finder">Finder</span>
+                </span>
+
+                <span class="brand-tagline">
+                    COOK SMARTER. WASTE LESS.
+                </span>
+            </span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+            type="button"
+            class="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links">
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Main navigation -->
+        <nav class="nav-links"
+             id="nav-links"
+             aria-label="Main navigation">
+
+            <a href="/index/index.html" data-page="home">Home</a>
+
+            <a href="/recipe/recipe.html" data-page="recipes">
+                Recipes
+            </a>
+
+            <a href="/kitchen/my-kitchen.html" data-page="kitchen">
+                My Kitchen
+            </a>
+
+            <a href="/shopping/shopping-list.html" data-page="shopping">
+                Shopping List
+            </a>
+        </nav>
+
+        <!-- Account menu -->
+        <div class="header-account" id="header-account">
+
+            <!-- Shown until login status is checked -->
+            <a href="/account/login.html"
+               class="login-link"
+               id="account-login-link">
+                Login
+            </a>
+
+            <a href="/account/register.html"
+               class="register-button"
+               id="account-register-link">
+                Create Account
+                <span aria-hidden="true">→</span>
+            </a>
+
+            <!-- Logged-in account button -->
+            <button
+                type="button"
+                class="account-avatar"
+                id="account-avatar"
+                aria-label="Open account menu"
+                aria-expanded="false"
+                aria-controls="account-dropdown"
+                hidden>
+
+                <svg viewBox="0 0 24 24"
+                     width="24"
+                     height="24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M5 21v-2a7 7 0 0 1 14 0v2"/>
+                </svg>
+            </button>
+
+            <!-- Dropdown panel -->
+            <div
+                class="account-dropdown"
+                id="account-dropdown"
+                hidden>
+
+                <div class="account-user-info">
+                    <strong id="account-full-name">User</strong>
+                    <span id="account-email">user@example.com</span>
+                </div>
+
+                <div class="account-dropdown-divider"></div>
+
+                <button
+                    type="button"
+                    class="account-logout-button"
+                    id="account-logout-button">
+
+                    <span aria-hidden="true">↪</span>
+                    Logout
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</header>
